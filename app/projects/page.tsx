@@ -1,0 +1,14 @@
+import Link from "next/link";
+import { projects } from "./data";
+
+function ProjectCover({ project }: { project: (typeof projects)[number] }) {
+  if (project.slug === "sattva-law") {
+    return <div className="sattva-cover" aria-label="Sattva Law and Associates landing page preview"><div className="sattva-cover-top"><b>Sattva</b><span>Law &amp; Associates</span><i>Let&apos;s talk</i></div><div className="sattva-cover-nav">Home <span>About</span><span>Blog</span><span>Capabilities</span><span>Company incorporation</span><span>RA practice</span><span>Practice areas</span><span>Contact</span></div><div className="sattva-cover-hero"><div className="sattva-cover-shade" /><div className="sattva-cover-copy"><small>SEBI &amp; regulatory practice</small><h3>Rigour for every<br /><em>regulated</em> decision.</h3><b>Explore our services ↘</b></div></div></div>;
+  }
+
+  return <img src={project.preview} alt={`${project.title} website preview`} />;
+}
+
+export default function Projects() {
+  return <main className="projects-page"><header className="projects-nav"><Link href="/" className="mark">sm<span>°</span></Link><span className="projects-label">Independent designer & developer</span><Link href="/" className="back">← Back home</Link></header><section className="projects-head"><p className="eyebrow">01 — PROJECT SHOWCASE</p><h1>Explore<br /><em>my work.</em></h1><div className="projects-intro"><p>A selected archive of responsive, conversion-focused websites across finance, engineering, law and education.</p><a href="#archive" className="projects-scroll">Browse the archive <span>↓</span></a></div></section><section className="projects-metrics"><div><strong>04</strong><span>Live projects</span></div><div><strong>04</strong><span>Distinct industries</span></div><div><strong>2026</strong><span>Current edition</span></div></section><section className="project-list project-archive" id="archive"><div className="projects-section-head"><p className="eyebrow">02 — SELECTED PROJECTS</p><span>CLICK A PREVIEW FOR TECHNICAL DETAILS</span></div><div className="project-cards">{projects.map((project) => <article className="project-card" key={project.slug}><Link href={`/projects/${project.slug}`} className="project-preview"><ProjectCover project={project} /><span>View technical case study ↗</span></Link><div className="project-card-info"><span>{project.number} / {project.year}</span><h2>{project.title}</h2><p>{project.category}</p><div><Link href={`/projects/${project.slug}`}>Case study <b>↗</b></Link><a href={project.url} target="_blank" rel="noreferrer">Visit live site <b>↗</b></a></div></div></article>)}</div></section><footer className="project-footer"><p>Have a project in mind?</p><Link href="/contact">Let&apos;s make something memorable <span>↗</span></Link></footer></main>;
+}
