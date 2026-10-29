@@ -31,7 +31,12 @@ export const projects: readonly Project[] = [
     systems: [
       { label: "Entry points", value: "Courses · Workshops · Calculators" }, { label: "Content model", value: "Reusable cards and utility modules" }, { label: "Responsive focus", value: "Readable data, forms and course grids" }, { label: "Primary action", value: "Course discovery and direct enquiry" },
     ],
-    gallery: [{ src: "/images/alfabet-finance-case-study-v1.png", alt: "Alfabet Finance course, calculator and contact interface collage", label: "Course catalogue, calculators and lead capture" }],
+    gallery: [
+      { src: "https://image.thum.io/get/width/1200/https://www.alfabetfinance.com/courses/", alt: "Alfabet Finance course catalogue interface", label: "Course catalogue and programme discovery" },
+      { src: "https://image.thum.io/get/width/1200/https://www.alfabetfinance.com/workshops/", alt: "Alfabet Finance workshop experience", label: "Workshop content and learner expectations" },
+      { src: "https://image.thum.io/get/width/1200/https://www.alfabetfinance.com/calculators/", alt: "Alfabet Finance financial calculator interface", label: "Interactive financial calculator tools" },
+      { src: "https://api.microlink.io/?url=https%3A%2F%2Fwww.alfabetfinance.com%2Fcontact%2F&screenshot=true&meta=false&embed=screenshot.url", alt: "Alfabet Finance Contact Us page with WhatsApp, email and phone contact cards", label: "Contact channels and lead capture flow" },
+    ],
   },
   {
     slug: "osew", number: "02", title: "OSEW", category: "Marine engineering website", year: "2026", url: "https://www.osew.in/", preview: "/images/osew-project-cover-exact.png",
